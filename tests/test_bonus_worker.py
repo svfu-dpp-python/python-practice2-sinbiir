@@ -11,11 +11,11 @@ class TestBonusWorker(test_worker.TestWorker):
 
     def get_worker(self):
         return BonusWorker(self.name, self.salary, self.bonus)
-    
+
     def test_parent(self):
         worker = self.get_worker()
         self.assertIsInstance(worker, Worker)
-    
+
     def test_salary(self):
         worker = self.get_worker()
         correct = 105.0
