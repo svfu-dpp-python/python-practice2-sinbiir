@@ -1,24 +1,30 @@
-from unittest import TestCase
+import unittest
 
 from worker import Worker
 
 
-class TestWorker(TestCase):
+class TestWorker(unittest.TestCase):
 
     def setUp(self) -> None:
         self.tax_rate = 10
         self.name = 'John Doe'
         self.salary = 100
-        self.worker = Worker(self.name, self.salary)
+
+    def get_worker(self):
+        return Worker(self.name, self.salary)
 
     def test_tax_rate(self):
         self.assertEqual(Worker.tax_rate, self.tax_rate)
 
     def test_name(self):
-        self.assertEqual(self.worker.name, self.name)
+        worker = self.get_worker()
+        self.assertEqual(worker.name, self.name)
 
     def test_salary(self):
-        self.assertEqual(self.worker.salary(), self.salary)
+        worker = self.get_worker()
+        self.assertEqual(worker.salary(), self.salary)
 
     def test_tax(self):
-        self.assertEqual(self.worker.tax(), self.salary * self.tax_rate)
+        worker = self.get_worker()
+        correct = 10.0
+        self.assertAlmostEqual(worker.tax(), correct, 10)
