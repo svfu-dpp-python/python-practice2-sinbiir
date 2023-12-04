@@ -15,4 +15,4 @@ class TestMain(unittest.TestCase):
                    "  50000.00"
                    "   5000.00"
                    "  45000.00")
-        self.assertEquals(res, correct)
+        self.assertEqual(res, correct)
