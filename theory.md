@@ -213,7 +213,7 @@ print(sharik.name)  # Шарик
 class Animal:
     name = ''
     def __init__(self, name):
-        name = self.name
+        self.name = name
 
 class Dog(Animal):
     def __init__(self, name, breed):
