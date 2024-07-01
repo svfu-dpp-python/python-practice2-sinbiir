@@ -7,7 +7,3 @@ def format_worker(worker):
     tax = f"{worker.tax()} "
     net_salary = f"{worker.salary - worker.tax()}"
     return f"{name}{salary}{tax}{net_salary}"
-
-if __name__ == "__main__":
-    bob = BonusWorker("Негр", 1000, 10)
-    print(format_worker(bob))
