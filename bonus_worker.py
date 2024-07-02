@@ -7,4 +7,4 @@ class BonusWorker(Worker):
         self.bonus_percent = bonus_percent
 
     def salary(self):
-        return super().salary() + (super().salary() * self.bonus_percent / 100)
+        return super().salary() * (1 + self.bonus_percent / 100)

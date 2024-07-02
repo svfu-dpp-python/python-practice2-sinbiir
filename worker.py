@@ -1,14 +1,16 @@
 class Worker:
+    tax_rate = 10
+    
     def __init__(self, name, salary):
         self.name = name
-        self.salary = salary
-        self.tax_rate = 10
+        self.sal = salary
+    
 
     def salary(self):
-        return self.salary
+        return self.sal
     
-    def tax_rate(self):
+    def tax_check(self):
         return self.tax_rate
 
     def tax(self):
-        return self.salary * self.tax_rate / 100
+        return self.salary() * self.tax_rate / 100
